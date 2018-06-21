@@ -1,0 +1,19 @@
+{
+  "name": "ns",
+  "version": "1.0.0",
+  "description": "NationStates bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "discord.js": "^11.3.2",
+    "enmap": "^2.6.2",
+    "moment": "^2.22.2",
+    "superagent": "^3.8.3",
+    "xml2js": "^0.4.19"
+  }
+}
