@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, level) => {
   const Discord = require("discord.js");
   const embed = new Discord.RichEmbed()
 
@@ -6,6 +6,8 @@ exports.run = async (client, message, args) => {
   var parseString = require('xml2js').parseString;
   var xml2js = require('xml2js');
 
+  //var first = args.text.split(" ");
+  //const name = join("_");
   let [...name] = args;
 
   const result = request.get(`https://www.nationstates.net/cgi-bin/api.cgi?nation=${name.join("_")}&q=name+gdp+population+currency+animal+region+wa+flag+fullname+motto+influence+census;mode=score;scale=66`);
@@ -36,4 +38,18 @@ exports.run = async (client, message, args) => {
         message.channel.send("\:x: " +  "`" + "Error: Invalid Nation" + "`"); //checks to see if the nation exists
       }
     });
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: "User"
+};
+
+exports.help = {
+  name: "nation",
+  category: "NationStates",
+  description: "search nations in nationStates",
+  usage: "nation [name]"
 };

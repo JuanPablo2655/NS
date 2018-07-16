@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, level) => {
   const Discord = require("discord.js");
   const embed = new Discord.RichEmbed()
 
@@ -39,4 +39,18 @@ exports.run = async (client, message, args) => {
         message.channel.send("\:x: " +  "`" + "Error: Invalid Nation" + "`"); //checks to see if the nation exists
       }
     });
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: "User"
+};
+
+exports.help = {
+  name: "govt",
+  category: "NationStates",
+  description: "search for the government in said nation in nationStates",
+  usage: "govt [name]"
 };

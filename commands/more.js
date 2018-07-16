@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, level) => {
   const Discord = require("discord.js");
   const embed = new Discord.RichEmbed()
 
@@ -24,7 +24,6 @@ result.then((res) => {
         .addField('Tax', obj.NATION.TAX, true)
         .addField('Average Income', obj.NATION.INCOME, true)
         .addField('Last Activity', obj.NATION.LASTACTIVITY, true)
-        .addField('Link', `http://www.nationstates.net/nation=${name.join("_")}`)
         .setFooter(`requested by: ${message.author.tag}`)
       message.channel.send({embed});
 
@@ -35,4 +34,18 @@ result.then((res) => {
         message.channel.send("\:x: " +  "`" + "Error: Invalid Nation" + "`"); //checks to see if the nation exists
       }
     });
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: "User"
+};
+
+exports.help = {
+  name: "more",
+  category: "NationStates",
+  description: "search more in said nation in nationStates",
+  usage: "more [name]"
 };

@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, level) => {
   const Discord = require("discord.js");
   const embed = new Discord.RichEmbed()
 
@@ -21,4 +21,18 @@ exports.run = async (client, message, args) => {
       message.channel.send({embed});
     })
   })
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: "User"
+};
+
+exports.help = {
+  name: "world",
+  category: "NationStates",
+  description: "Gets info about NationStates",
+  usage: "world"
 };

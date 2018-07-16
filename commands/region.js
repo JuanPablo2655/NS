@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, level) => {
   const Discord = require("discord.js");
   const embed = new Discord.RichEmbed()
 
@@ -31,4 +31,18 @@ exports.run = async (client, message, args) => {
         message.channel.send("\:x: " +  "`" + "Error: Invalid Region" + "`"); //checks to see if the nation exists
       }
     });
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: "User"
+};
+
+exports.help = {
+  name: "region",
+  category: "NationStates",
+  description: "search regions in nationStates",
+  usage: "region [name]"
 };
